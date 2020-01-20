@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Travelbuddyapps</string>
+    <string name="country">Login Registration</string>
+
+    <string-array name="country_arrays">
+        <item>Choose Country</item>
+        <item>Nepal</item>
+        <item>United States</item>
+        <item>Australia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
 </resources>

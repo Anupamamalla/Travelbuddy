@@ -24,7 +24,7 @@ public class login extends AppCompatActivity {
         });
     }
     public void openDashBoard(){
-        Intent openDash = new Intent(this, MainActivity.class);
+        Intent openDash = new Intent(this, Dashboard.class);
         startActivity(openDash);
     }
 }

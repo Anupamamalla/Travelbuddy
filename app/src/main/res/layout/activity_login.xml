@@ -17,7 +17,6 @@
         android:layout_above="@id/input_group">
 
         <ImageView
-            android:id="@+id/imageView2"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:srcCompat="@drawable/logo" />
@@ -59,7 +58,6 @@
 
 
         <Button
-            android:id="@+id/btnSignin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

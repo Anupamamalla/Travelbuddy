@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.Search">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#F8F8D4"
+        android:orientation="vertical">
+
+        <SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search Your Destination">
+
+        </SearchView>
+
+
+        <EditText
+            android:id="@+id/etStartdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:hint="Enter start date" />
+
+        <Button
+            android:id="@+id/btnStartdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etStartdate"
+            android:layout_marginLeft="100dp"
+            android:text="Get Date" />
+
+    </LinearLayout>
+
+</RelativeLayout>

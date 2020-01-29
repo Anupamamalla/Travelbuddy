@@ -1,9 +1,11 @@
-package com.example.travelbuddyapps;
+package com.example.travelbuddyapps.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.travelbuddyapps.R;
 
 public class SplashScreen extends AppCompatActivity {
 

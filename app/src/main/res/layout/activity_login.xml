@@ -36,6 +36,7 @@
         android:gravity="center">
 
 
+
         <EditText
             android:id="@+id/etUser"
             android:layout_width="match_parent"
@@ -43,21 +44,26 @@
             android:background="@drawable/edit_text_top"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:padding="15dp"
+            android:padding="15dp" />
 
-            />
+
+
+
+
 
         <EditText
             android:id="@+id/etPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_bottom"
-            android:hint="Password"
             android:inputType="textPassword"
-            android:padding="15dp" />
+            android:background="@drawable/edit_text_top"
+            android:ems="10"
+            android:hint="Password"/>
+
 
 
         <Button
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

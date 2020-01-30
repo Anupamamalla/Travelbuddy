@@ -38,7 +38,7 @@
         >
 
         <EditText
-            android:id="@+id/etUser"
+            android:id="@+id/etUserReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_top"
@@ -47,7 +47,7 @@
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/etEmailReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_middle"
@@ -56,7 +56,7 @@
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/etPass"
+            android:id="@+id/etPassReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_middle"
@@ -65,7 +65,7 @@
             android:padding="15dp"/>
 
         <Spinner
-            android:id="@+id/etCountry"
+            android:id="@+id/etCountryReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_bottom"

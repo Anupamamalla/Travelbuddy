@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.travelbuddyapps.API.UserApi;
 import com.example.travelbuddyapps.Model.User;
 import com.example.travelbuddyapps.R;
+import com.example.travelbuddyapps.Severresponse.SignupResponse;
 import com.example.travelbuddyapps.URL.Url;
 
 import retrofit2.Call;
@@ -21,20 +22,26 @@ import retrofit2.Response;
 
 public class login extends AppCompatActivity {
 
-    private EditText etusername,etpassword;
+    private EditText etusername, etpassword;
     private Button btnlogin;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
         etusername = findViewById(R.id.etUser);
         etpassword = findViewById(R.id.etPass);
-        setContentView(R.layout.activity_login);
 
         TextView signUp_text = findViewById(R.id.signUp_text);
-
         btnlogin = findViewById(R.id.login);
+        signUp_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(login.this, Registration.class));
+
+            }
+        });
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,54 +49,38 @@ public class login extends AppCompatActivity {
                 login();
             }
 
-            private void login()
-            {
-             String username = etusername.getText().toString();
-             String password = etpassword.getText().toString();
+            public void login(){
+                String username = etusername.getText().toString();
+                String password = etpassword.getText().toString();
 
+                User usr = new User(username,password);
 
-                User user = new User(username,password);
+                UserApi userApi =  Url.getInstance().create(UserApi.class);
+                Call<SignupResponse> signupcall = userApi.signin(usr);
 
-                UserApi userApi = Url.getInstance().create(UserApi.class);
-                final Call<Void>  login = userApi.signin(user);
-
-                login.enqueue(new Callback<Void>() {
+                signupcall.enqueue(new Callback<SignupResponse>() {
                     @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
+                    public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
                         if(!response.isSuccessful()){
-                            Toast.makeText(login.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
-                            return;
+                            Toast.makeText(login.this,"Error",Toast.LENGTH_SHORT).show();
+                        } else{
+                            Toast.makeText(login.this,"token:"+response.body().getToken(),Toast.LENGTH_SHORT).show();
+                            Intent login = new Intent(getApplicationContext(), Dashboard.class);
+                            startActivity(login);
                         }
-
-                        opendas();
                     }
 
                     @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-                        Toast.makeText(login.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<SignupResponse> call, Throwable t) {
 
-                    }
-                    private  void opendas(){
-                        Intent i = new Intent(login.this,Dashboard.class);
-                        startActivity(i);
                     }
                 });
 
-
-            }
-        });
-        signUp_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(login.this, Registration.class));
-                finish();
             }
         });
 
 
-    }
-    public void openDashBoard(){
-        Intent openDash = new Intent(this, Dashboard.class);
-        startActivity(openDash);
+
     }
 }
+

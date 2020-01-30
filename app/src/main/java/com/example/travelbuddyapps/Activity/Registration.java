@@ -32,10 +32,10 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         btnSignup = findViewById(R.id.btnSignup);
-        Username = findViewById(R.id.etUser);
-        Email = findViewById(R.id.etEmail);
-        Password = findViewById(R.id.etPass);
-        Country = findViewById(R.id.etCountry);
+        Username = findViewById(R.id.etUserReg);
+        Email = findViewById(R.id.etEmailReg);
+        Password = findViewById(R.id.etPassReg);
+        Country = findViewById(R.id.etCountryReg);
 
 
 
@@ -55,7 +55,7 @@ public class Registration extends AppCompatActivity {
     private void signup(){
 
         String email = Email.getText().toString();
-        String country = Country.toString();
+        String country = Country.getSelectedItem().toString();
         String username = Username.getText().toString();
         String password = Password.getText().toString();
 

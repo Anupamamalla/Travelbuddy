@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Dashboard">
+        <activity android:name=".Activity.login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -24,7 +24,7 @@
         <activity android:name=".Activity.header" />
         <activity android:name=".Activity.Navigation" />
         <activity android:name=".Activity.Registration" />
-        <activity android:name=".Activity.login" />
+        <activity android:name=".Activity.Dashboard" />
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.SplashScreen" />
 

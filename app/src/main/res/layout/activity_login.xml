@@ -58,6 +58,7 @@
             android:inputType="textPassword"
             android:background="@drawable/edit_text_top"
             android:ems="10"
+            android:padding="15dp"
             android:hint="Password"/>
 
 

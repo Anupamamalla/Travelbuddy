@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="@layout/activity_dashboard">
     <item
         android:id="@+id/home"
 
         android:title="Home"
+        android:icon="@drawable/internet"
         />
 
 
 
     <item
-        android:id="@+id/cart"
+        android:id="@+id/deals"
 
-        android:title="Order History"
+        android:title="Deals"
+        android:icon="@drawable/idea"
        />
     <item
-        android:id="@+id/nearby"
+        android:id="@+id/trips"
 
-        android:title="Near By"
+        android:title="My Trips"
+        android:icon="@drawable/bag"
        />
 
     <item
         android:id="@+id/account"
 
         android:title="Account"
+        android:icon="@drawable/user"
       />
 
 </menu>

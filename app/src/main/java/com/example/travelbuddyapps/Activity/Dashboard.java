@@ -12,14 +12,20 @@ import android.view.MenuItem;
 
 
 import com.example.travelbuddyapps.Fragment.Search;
+import com.example.travelbuddyapps.Model.Package;
 import com.example.travelbuddyapps.R;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
 
     private DrawerLayout drawer;
     private NavigationView nv;
     private Toolbar toolbar;
+
+     public static List<Package> lstpackage;
 
 
     @Override
@@ -42,6 +48,44 @@ public class Dashboard extends AppCompatActivity {
         toggle.syncState();
 
 
+
+
+        lstpackage = new ArrayList<>();
+        lstpackage.add(new Package(R.drawable.cardone,"Janakpur"));
+        lstpackage.add(new Package(R.drawable.cardtwo,"Tilicho"));
+        lstpackage.add(new Package(R.drawable.cardthree,"Mustang"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+        lstpackage.add(new Package(R.drawable.cardfour, "Patan"));
+
+
+
+        if(savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new Search()).commit();
+            nv.setCheckedItem(R.id.home);
+        }
+
+       nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+           @Override
+           public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+               switch (menuItem.getItemId()){
+                   case R.id.home:
+                       getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                               new Search()).commit();
+                       break;
+
+               }
+               drawer.closeDrawer(GravityCompat.START);
+               return true;
+           }
+
+       });
 
 
 

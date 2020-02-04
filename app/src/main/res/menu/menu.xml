@@ -26,9 +26,13 @@
 
     <item
         android:id="@+id/account"
-
         android:title="Account"
         android:icon="@drawable/user"
       />
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+        android:icon="@drawable/logout"
+               />
 
 </menu>

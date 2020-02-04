@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,11 +7,12 @@
     tools:context=".Activity.Account"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:background="#F5F5F5"
-        android:orientation="horizontal">
+        android:layout_height="206dp"
+        android:background="#F90"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_gap">
 
         <ImageView
             android:layout_width="50dp"
@@ -19,32 +20,29 @@
             android:src="@drawable/user" />
 
         <TextView
+            android:id="@+id/txtName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:text="Name" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:background="#F5F5F5"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/user" />
 
         <TextView
+            android:id="@+id/txtEmail"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtName"
             android:layout_marginLeft="50dp"
-            android:text="Name" />
+            android:text="Email" />
+
+        <TextView
+            android:id="@+id/txtCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEmail"
+            android:layout_marginLeft="50dp"
+            android:text="Country" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

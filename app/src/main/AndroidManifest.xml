@@ -17,7 +17,7 @@
         <activity android:name=".Activity.Dashboard"></activity>
         <activity android:name=".Activity.Account" />
         <activity android:name=".Activity.Edit" />
-        <activity android:name=".Activity.Home">
+        <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
         <activity android:name=".Activity.Registration" />
         <activity android:name=".Activity.login" />
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.SplashScreen" />
+        <activity android:name=".Activity.Home" />
 
         <meta-data
             android:name="preloaded_fonts"

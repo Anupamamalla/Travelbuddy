@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import com.example.travelbuddyapps.R;
 
+import org.w3c.dom.Text;
+
 public class Home extends AppCompatActivity {
     Button btnsubmit;
     EditText Start;
@@ -17,6 +19,8 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Start=(EditText)findViewById(R.id.startdate);
 
 
     }

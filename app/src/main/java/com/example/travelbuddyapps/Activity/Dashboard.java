@@ -7,9 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 import com.example.travelbuddyapps.Fragment.Search;
@@ -20,14 +23,17 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.travelbuddyapps.URL.Url.token;
+
 public class Dashboard extends AppCompatActivity {
 
     private DrawerLayout drawer;
     private NavigationView nv;
     private Toolbar toolbar;
-    private Button button;
+  //Button logout;
 
-     public static List<Package> lstpackage;
+
+    public static List<Package> lstpackage;
 
 
     @Override
@@ -39,6 +45,7 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().hide();
         drawer = findViewById(R.id.drawer);
         NavigationView nv = findViewById(R.id.nav_view);
+        //logout = findViewById(R.id.btnlogout);
 
         //nv.setNavigationItemSelectedListener(this);
 
@@ -67,6 +74,8 @@ public class Dashboard extends AppCompatActivity {
 
 
 
+
+
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new Search()).commit();
@@ -82,6 +91,11 @@ public class Dashboard extends AppCompatActivity {
                                new Search()).commit();
                        break;
 
+                   case R.id.logout:
+                       logout();
+                       Intent it = new Intent (Dashboard.this,login.class);
+                       startActivity(it);
+
                }
                drawer.closeDrawer(GravityCompat.START);
                return true;
@@ -90,6 +104,13 @@ public class Dashboard extends AppCompatActivity {
        });
 
     }
+
+    private void logout() {
+        if(token != "Bearer"){
+            token ="Bearer";
+        }
+    }
+
 
     @Override
     public void onBackPressed() {

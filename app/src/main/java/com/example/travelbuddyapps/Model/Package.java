@@ -1,13 +1,17 @@
 package com.example.travelbuddyapps.Model;
 
+import android.widget.Button;
+
 public class Package {
 
     private int image;
     private String title;
 
+
     public Package(int image, String title) {
         this.image = image;
         this.title = title;
+
 
     }
 
@@ -26,4 +30,5 @@ public class Package {
     public void setTitle(String title) {
         this.title = title;
     }
-}
+
+    }

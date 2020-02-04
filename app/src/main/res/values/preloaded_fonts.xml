@@ -2,5 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/abril_fatface</item>
+        <item>@font/alice</item>
+        <item>@font/amaranth</item>
+        <item>@font/bubbler_one</item>
     </array>
 </resources>

@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
 
 import com.example.travelbuddyapps.Fragment.Search;
@@ -24,6 +25,7 @@ public class Dashboard extends AppCompatActivity {
     private DrawerLayout drawer;
     private NavigationView nv;
     private Toolbar toolbar;
+    private Button button;
 
      public static List<Package> lstpackage;
 
@@ -86,8 +88,6 @@ public class Dashboard extends AppCompatActivity {
            }
 
        });
-
-
 
     }
 

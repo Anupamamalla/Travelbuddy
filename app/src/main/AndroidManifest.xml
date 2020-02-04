@@ -14,11 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Dashboard">
+        <activity android:name=".Activity.Dashboard"></activity>
+        <activity android:name=".Activity.Account" />
+        <activity android:name=".Activity.Edit" />
+        <activity android:name=".Activity.Home">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Activity.header" />

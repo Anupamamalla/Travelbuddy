@@ -9,27 +9,27 @@
 
     <LinearLayout
         android:id="@+id/input_group"
-        android:layout_width="193dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="left"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="80dp"
-        android:background="#FFFAE3"
+
         android:orientation="vertical">
 
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="191dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:fontFamily="@font/amaranth"
             android:text="Edit Profile"
             android:textSize="30dp" />
 
-
         <EditText
-            android:id="@+id/etUserReg"
+            android:id="@+id/editUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_top"
@@ -38,7 +38,7 @@
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/etEmailReg"
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_middle"
@@ -47,7 +47,7 @@
             android:padding="15dp" />
 
         <EditText
-            android:id="@+id/etPassReg"
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_middle"
@@ -56,7 +56,7 @@
             android:padding="15dp" />
 
         <Spinner
-            android:id="@+id/etCountryReg"
+            android:id="@+id/editCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_bottom"

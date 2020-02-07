@@ -4,45 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Account"
+    tools:context=".Fragment.AccountFragment"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="206dp"
-        android:background="#F90"
+        android:layout_height="189dp"
+        android:background="#A2FF9900"
         android:orientation="horizontal"
         android:padding="@dimen/default_gap">
 
+
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="92dp"
+            android:layout_height="131dp"
             android:src="@drawable/user" />
 
         <TextView
             android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
             android:layout_marginLeft="50dp"
-            android:text="Name" />
+            android:text="Anupama"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtName"
+            android:layout_marginStart="150dp"
             android:layout_marginLeft="50dp"
-            android:text="Email" />
+            android:text="anu@gmail.com"
+            android:textSize="30sp" />
+
 
         <TextView
             android:id="@+id/txtCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtEmail"
+            android:layout_marginStart="150dp"
             android:layout_marginLeft="50dp"
-            android:text="Country" />
-
+            android:text="Nepal"
+            android:textSize="30sp" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="469dp"
+        android:text="Your Bookings Details"
+        android:textSize="30sp" />
 
 </RelativeLayout>

@@ -42,12 +42,14 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         Package pac = lstpack.get(position);
         holder.img.setImageResource(pac.getImage());
         holder.txtname.setText(pac.getTitle());
+
     }
 
     @Override
     public int getItemCount() {
         return lstpack.size();
     }
+
 
     public  class SearchViewholder extends  RecyclerView.ViewHolder{
 

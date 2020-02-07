@@ -33,6 +33,8 @@ public class login extends AppCompatActivity {
         etusername = findViewById(R.id.etUser);
         etpassword = findViewById(R.id.etPass);
 
+        getSupportActionBar().hide();
+
         TextView signUp_text = findViewById(R.id.signUp_text);
         btnlogin = findViewById(R.id.login);
         signUp_text.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class login extends AppCompatActivity {
                         if(!response.isSuccessful()){
                             Toast.makeText(login.this,"Error",Toast.LENGTH_SHORT).show();
                         } else{
+                            Url.token+=response.body().getToken();
                             Toast.makeText(login.this,"token:"+response.body().getToken(),Toast.LENGTH_SHORT).show();
                             Intent login = new Intent(getApplicationContext(), Dashboard.class);
                             startActivity(login);

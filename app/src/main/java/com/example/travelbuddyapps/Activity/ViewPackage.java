@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Navigation extends AppCompatActivity {
+import com.example.travelbuddyapps.R;
+
+public class ViewPackage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_navigation);
+        setContentView(R.layout.activity_viewpackage);
     }
 }

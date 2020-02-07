@@ -1,7 +1,5 @@
 package com.example.travelbuddyapps.Fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,7 +15,7 @@ import com.example.travelbuddyapps.R;
 
 import static com.example.travelbuddyapps.Activity.Dashboard.lstpackage;
 
-public class Search extends Fragment {
+public class CardFragment extends Fragment {
 
    RecyclerView rv;
 
@@ -27,9 +25,9 @@ public class Search extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_search, container, false);
+        View v = inflater.inflate(R.layout.fragment_card, container, false);
 
-        rv = v.findViewById(R.id.searchrec);
+        rv = v.findViewById(R.id.cardrec);
         SearchAdapter sa = new SearchAdapter(getContext(),lstpackage);
         rv.setAdapter(sa);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));

@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.travelbuddyapps.Model.User;
 import com.example.travelbuddyapps.R;
 
 import static com.example.travelbuddyapps.Activity.Dashboard.globaluser;
@@ -35,4 +36,11 @@ public class Edit extends AppCompatActivity {
 
 
     }
+
+        private void editprofile(){
+
+        String Username = username.getText().toString();
+        String Email = email.getText().toString();
+
+        }
 }

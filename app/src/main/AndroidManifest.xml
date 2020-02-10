@@ -14,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.ViewPackage"></activity>
+        <activity android:name=".Activity.SplashScreen"></activity>
+        <activity android:name=".Activity.ViewPackage" />
         <activity android:name=".Activity.Dashboard" />
         <activity android:name=".Activity.Edit" />
-        <activity android:name=".Activity.SplashScreen">
+        <activity android:name=".Activity.Admin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

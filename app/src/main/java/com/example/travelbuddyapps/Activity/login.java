@@ -45,20 +45,23 @@ public class login extends AppCompatActivity {
             }
         });
 
+
+
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
+
             }
 
+
+
             public void login(){
-                String username = etusername.getText().toString();
-                String password = etpassword.getText().toString();
-
-                User usr = new User(username,password);
-
                 UserApi userApi =  Url.getInstance().create(UserApi.class);
-                Call<SignupResponse> signupcall = userApi.signin(usr);
+                Call<SignupResponse> signupcall = userApi.signin(
+                        etusername.getText().toString(),
+                        etpassword.getText().toString()
+                );
 
                 signupcall.enqueue(new Callback<SignupResponse>() {
                     @Override
@@ -70,8 +73,10 @@ public class login extends AppCompatActivity {
                             Toast.makeText(login.this,"token:"+response.body().getToken(),Toast.LENGTH_SHORT).show();
                             Intent login = new Intent(getApplicationContext(), Dashboard.class);
                             startActivity(login);
+
                         }
                     }
+
 
                     @Override
                     public void onFailure(Call<SignupResponse> call, Throwable t) {

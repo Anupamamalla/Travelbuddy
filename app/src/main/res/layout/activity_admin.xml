@@ -27,73 +27,30 @@
         android:hint="Price"
         android:layout_below="@+id/etpackage"
         android:layout_marginTop="30dp"/>
-    <RadioGroup
-        android:layout_marginTop="30dp"
-        android:id="@+id/groupradio"
-        android:layout_marginLeft="10dp"
-        android:layout_width="fill_parent"
+    <EditText
+        android:id="@+id/ettrans"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etprice">
-
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Transportaion"
-          android:textSize="20dp"/>
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio1"
-            android:text="Included"
-            android:textSize="20dp" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio2"
-            android:text="Not Included"
-            android:textSize="20dp"/>
-
-    </RadioGroup>
-
-    <RadioGroup
-        android:layout_marginTop="30dp"
-        android:id="@+id/groupradio2"
-        android:layout_marginLeft="10dp"
-        android:layout_width="fill_parent"
+        android:hint="Transportation"
+        android:layout_below="@+id/etprice"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/etacco"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/groupradio">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Accomodation"
-            android:textSize="20dp"/>
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio3"
-            android:text="Included"
-            android:textSize="20dp" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio4"
-            android:text="Not Included"
-            android:textSize="20dp"/>
-
-    </RadioGroup>
-
+        android:hint="Accomodation"
+        android:layout_below="@+id/ettrans"
+        android:layout_marginTop="30dp"/>
 
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Add"
-    android:layout_below="@id/groupradio2"
+    android:layout_below="@id/etacco"
    android:layout_marginLeft="50dp"
     android:layout_marginTop="20dp"
     android:textSize="20dp"
+    android:id="@+id/btnAdd"
     style="@style/AndroidImageSlider_Corner_Oval_Orange" />
 
 </RelativeLayout>

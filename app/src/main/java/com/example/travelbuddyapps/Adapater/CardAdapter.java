@@ -15,12 +15,12 @@ import com.example.travelbuddyapps.R;
 
 import java.util.List;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewholder> {
+public class CardAdapter extends RecyclerView.Adapter<CardAdapter.SearchViewholder> {
 
     Context mContext;
     List<Package> lstpack;
 
-    public SearchAdapter(Context mContext, List<Package> lstpack){
+    public CardAdapter(Context mContext, List<Package> lstpack){
 
         this.mContext=mContext;
         this.lstpack = lstpack;
@@ -55,11 +55,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
        ImageView img;
         TextView txtname;
+
         public SearchViewholder(@NonNull View itemView) {
             super(itemView);
 
             img = itemView.findViewById(R.id.img);
             txtname = itemView.findViewById(R.id.txtTitle);
+
         }
     }
 

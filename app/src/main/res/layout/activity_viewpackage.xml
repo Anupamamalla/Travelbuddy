@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</LinearLayout>
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/img"
+    android:src="@drawable/cardthree"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:text="Package Name"
+        android:textSize="20dp"
+        android:layout_below="@+id/img"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Price"
+        android:text="Price"
+        android:textSize="20dp"
+        android:layout_below="@+id/name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Trans"
+        android:text="Transportation"
+        android:textSize="20dp"
+        android:layout_below="@+id/Price"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Acco"
+        android:text="Accomodation"
+        android:textSize="20dp"
+        android:layout_below="@+id/Trans"/>
+</RelativeLayout>

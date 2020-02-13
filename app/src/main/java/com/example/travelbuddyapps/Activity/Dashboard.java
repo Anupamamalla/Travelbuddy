@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,14 +40,11 @@ public class Dashboard extends AppCompatActivity {
     private DrawerLayout drawer;
     private NavigationView nv;
     private Toolbar toolbar;
-  //Button logout;
-
+    private Button btnviewpac;
+    TextView textViewHeaderUsername;
 
     public static List<Package> lstpackage;
-
     public static User globaluser;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +55,7 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().hide();
         drawer = findViewById(R.id.drawer);
         NavigationView nv = findViewById(R.id.nav_view);
+        textViewHeaderUsername = nv.getHeaderView(0).findViewById(R.id.headerview_user);
           loaduser();
 
 
@@ -66,6 +65,10 @@ public class Dashboard extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
 
         toggle.syncState();
+
+//        btnviewpac = findViewById(R.id.btnViewPac);
+//
+//        startActivity(new Intent(Dashboard.this, ViewPackage.class));
 
 
 
@@ -163,15 +166,16 @@ public class Dashboard extends AppCompatActivity {
                     Toast.makeText(Dashboard.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                       globaluser = response.body();
-                String username =  response.body().getUsername();
-                String email =  response.body().getEmail();
-
-                Toast.makeText(Dashboard.this,"name:"+username,Toast.LENGTH_SHORT).show();
-                TextView tvUsername = (TextView)drawer.findViewById(R.id.tvUsername);
-                TextView tvEmail=(TextView)drawer.findViewById(R.id.tvEmail) ;
-                tvUsername.setText(username);
-                tvEmail.setText(email);
+                textViewHeaderUsername.setText(response.body().getUsername());
+//                       globaluser = response.body();
+//                String username =  response.body().getUsername();
+//                String email =  response.body().getEmail();
+//
+//                Toast.makeText(Dashboard.this,"name:"+username,Toast.LENGTH_SHORT).show();
+//                TextView tvUsername = (TextView)drawer.findViewById(R.id.tvUsername);
+//                TextView tvEmail=(TextView)drawer.findViewById(R.id.tvEmail) ;
+//                tvUsername.setText(username);
+//                tvEmail.setText(email);
 
             }
 

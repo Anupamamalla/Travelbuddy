@@ -9,14 +9,14 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/user"
+        android:id="@+id/headerview_image"
         android:layout_width="56dp"
         android:layout_height="91dp"
         android:src="@drawable/userr" />
 
 
     <TextView
-        android:id="@+id/tvUsername"
+        android:id="@+id/headerview_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"

@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.example.travelbuddyapps.Adapater.SearchAdapter;
+import com.example.travelbuddyapps.Adapater.CardAdapter;
 import com.example.travelbuddyapps.R;
 
 import static com.example.travelbuddyapps.Activity.Dashboard.lstpackage;
@@ -21,6 +22,7 @@ public class CardFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class CardFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_card, container, false);
 
         rv = v.findViewById(R.id.cardrec);
-        SearchAdapter sa = new SearchAdapter(getContext(),lstpackage);
+        CardAdapter sa = new CardAdapter(getContext(),lstpackage);
         rv.setAdapter(sa);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 

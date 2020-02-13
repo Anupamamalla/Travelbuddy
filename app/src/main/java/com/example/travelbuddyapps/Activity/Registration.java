@@ -39,10 +39,6 @@ public class Registration extends AppCompatActivity {
         Country = findViewById(R.id.etCountryReg);
 
 
-
-
-
-
         TextView signIn_text = findViewById(R.id.signIn_text);
         btnSignup.setOnClickListener(new View.OnClickListener() {
 

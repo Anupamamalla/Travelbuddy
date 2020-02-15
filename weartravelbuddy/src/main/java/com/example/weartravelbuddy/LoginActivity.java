@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends WearableActivity {
 
-    protected EditText etusername, etpassword;
+    private EditText etusername, etpassword;
     private Button btnlogin;
 
     @Override
@@ -28,7 +28,7 @@ public class LoginActivity extends WearableActivity {
         setContentView(R.layout.activity_login);
         etusername = findViewById(R.id.etUser);
         etpassword = findViewById(R.id.etPass);
-        btnlogin = findViewById(R.id.login);
+        btnlogin = findViewById(R.id.btnLogin);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +50,7 @@ public class LoginActivity extends WearableActivity {
                 @Override
                 public void onResponse(Call<SigninResponse> call, Response<SigninResponse> response) {
                     if(!response.isSuccessful()){
-                        Toast.makeText(LoginActivity.this,"Login Sucess",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"Login Failed",Toast.LENGTH_SHORT).show();
                     } else{
                         Url.token = "Bearer " + response.body().getToken();
                         Toast.makeText(LoginActivity.this,"token:"+response.body().getToken(),Toast.LENGTH_SHORT).show();

@@ -2,7 +2,10 @@ package com.example.travelbuddyapps.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +29,12 @@ public class Registration extends AppCompatActivity {
     private Button btnSignup;
     private EditText Username, Email, Password;
     private Spinner Country;
+    private ShakeDetector mShakeDetector;
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+
+
+
 
 
     @Override
@@ -39,6 +48,18 @@ public class Registration extends AppCompatActivity {
         Password = findViewById(R.id.etPassReg);
         Country = findViewById(R.id.etCountryReg);
 
+        mSensorManager=(SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer=mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mShakeDetector= new ShakeDetector(new ShakeDetector.OnShakeListener() {
+            @Override
+            public void onShake() {
+                Username.setText("");
+                Email.setText("");
+                Password.setText("");
+
+
+            }
+        });
 
         TextView signIn_text = findViewById(R.id.signIn_text);
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -91,5 +112,17 @@ public class Registration extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(mShakeDetector,mAccelerometer,SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        super.onPause();
     }
 }

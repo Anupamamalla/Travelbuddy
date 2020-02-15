@@ -4,10 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Notification;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -42,6 +49,8 @@ public class Dashboard extends AppCompatActivity {
     private Toolbar toolbar;
     private Button btnviewpac;
     TextView textViewHeaderUsername;
+
+    private NotificationManagerCompat notificationManagerCompat;
 
 
     public static User user_id;
@@ -190,5 +199,8 @@ public class Dashboard extends AppCompatActivity {
             }
         });
     }
+
+
+
 }
 

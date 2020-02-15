@@ -7,6 +7,5 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-
     <string name="hello_world">Hello Square World!</string>
 </resources>

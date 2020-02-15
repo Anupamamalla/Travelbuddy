@@ -1,5 +1,6 @@
 package com.example.travelbuddyapps.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.travelbuddyapps.Activity.ViewPackage;
 import com.example.travelbuddyapps.Adapater.CardAdapter;
 import com.example.travelbuddyapps.R;
 
@@ -29,10 +31,15 @@ public class CardFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_card, container, false);
 
+
         rv = v.findViewById(R.id.cardrec);
         CardAdapter sa = new CardAdapter(getContext(),lstpackage);
         rv.setAdapter(sa);
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+
+
 
 
         return v;

@@ -1,9 +1,12 @@
 package com.example.travelbuddyapps.Severresponse;
 
+import android.icu.text.PluralFormat;
+
 public class SignupResponse {
 
     private String token;
     private String success;
+
 
     public SignupResponse(String token, String success) {
         this.token = token;
@@ -25,4 +28,7 @@ public class SignupResponse {
     public void setSuccess(String success) {
         this.success = success;
     }
+
+
+
 }

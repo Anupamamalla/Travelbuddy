@@ -3,6 +3,10 @@ package com.example.travelbuddyapps.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +28,8 @@ public class login extends AppCompatActivity {
 
     private EditText etusername, etpassword;
     private Button btnlogin;
+    boolean flag = false;
+    private SensorManager sensorManager;
 
 
     @Override
@@ -41,6 +47,8 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(login.this, Registration.class));
+
+
 
             }
         });
@@ -69,7 +77,7 @@ public class login extends AppCompatActivity {
                         if(!response.isSuccessful()){
                             Toast.makeText(login.this,"Error",Toast.LENGTH_SHORT).show();
                         } else{
-                            Url.token+=response.body().getToken();
+                            Url.token = "Bearer " + response.body().getToken();
                             Toast.makeText(login.this,"token:"+response.body().getToken(),Toast.LENGTH_SHORT).show();
                             Intent login = new Intent(getApplicationContext(), Dashboard.class);
                             startActivity(login);
@@ -90,5 +98,25 @@ public class login extends AppCompatActivity {
 
 
     }
+    private void proximity(){
+        sensorManager=(SensorManager) getSystemService(SENSOR_SERVICE);
+        Sensor sensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+        SensorEventListener proxilistener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                if(event.values[0]<=4 && flag==false){
+//                    login();
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        };
+        sensorManager.registerListener(proxilistener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
 }
 

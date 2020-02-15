@@ -43,6 +43,8 @@ public class Dashboard extends AppCompatActivity {
     private Button btnviewpac;
     TextView textViewHeaderUsername;
 
+    public static User user_id;
+
     public static List<Package> lstpackage;
     public static User globaluser;
 

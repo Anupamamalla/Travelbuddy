@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.travelbuddyapps.API.UserApi;
+import com.example.travelbuddyapps.Activity.Dashboard;
 import com.example.travelbuddyapps.Model.User;
 import com.example.travelbuddyapps.R;
 import com.example.travelbuddyapps.URL.Url;
@@ -24,18 +25,19 @@ import retrofit2.Response;
 
 
 public class AccountFragment extends Fragment {
-
+    TextView txtName;
+    TextView txtEmail;
+    TextView txtCountry;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_account, container, false);
-
+        View view = inflater.inflate(R.layout.activity_account, container, false);
+        txtName=view.findViewById(R.id.txtName);
+        txtEmail=view.findViewById(R.id.txtEmail);
+        txtCountry=view.findViewById(R.id.txtCountry);
         loadUser();
-        return v;
-
-
-
+        return view;
     }
 
     private void loadUser() {
@@ -50,14 +52,16 @@ public class AccountFragment extends Fragment {
                     return;
 
 
+                }else {
+                    txtName.setText(response.body().getUsername());
+                    txtEmail.setText(response.body().getEmail());
+                    txtCountry.setText(response.body().getCountry());
                 }
-                String Username=response.body().getUsername();
-                String email =response.body().getEmail();
-                String country =response.body().getCountry();
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
+                Toast.makeText(getContext(),"Code"+t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
 
             }
         });

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.travelbuddyapps.API.UserApi;
 import com.example.travelbuddyapps.Model.User;
 import com.example.travelbuddyapps.R;
+import com.example.travelbuddyapps.Severresponse.SignupResponse;
 import com.example.travelbuddyapps.URL.Url;
 
 import retrofit2.Call;
@@ -62,11 +63,11 @@ public class Registration extends AppCompatActivity {
         User user = new User(email,country,username,password);
 
         UserApi userApi= Url.getInstance().create(UserApi.class);
-        Call<Void> call = userApi.signup(user);
+        Call<SignupResponse> call = userApi.signup(user);
 
-        call.enqueue(new Callback<Void>() {
+        call.enqueue(new Callback<SignupResponse>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
                 if (!response.isSuccessful()) {
 
                     Toast.makeText(Registration.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
@@ -82,7 +83,7 @@ public class Registration extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<SignupResponse> call, Throwable t) {
                 Toast.makeText(Registration.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
             }

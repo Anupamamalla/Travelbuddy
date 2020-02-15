@@ -10,10 +10,11 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface UserApi {
     @POST("users/register")
-    Call<Void> signup(@Body User user);
+    Call<SignupResponse> signup(@Body User user);
 
     @POST("users/signin")
     @FormUrlEncoded
@@ -24,4 +25,6 @@ public interface UserApi {
 
     @GET("users/myProfile")
     Call<User> retrieveUserdetail(@Header("Authorization")String token);
+    @PUT("users/myProfile")
+    Call <User> updateUser(@Header("Authorization")String token, @Body User user);
 }

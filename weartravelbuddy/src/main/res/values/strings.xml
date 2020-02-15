@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WearTravelBuddy</string>
+
+    <style name="AppTheme.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <string name="hello_world">Hello Square World!</string>
+</resources>

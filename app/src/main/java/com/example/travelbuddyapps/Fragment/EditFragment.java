@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -32,6 +33,7 @@ public class EditFragment extends Fragment {
     EditText editUser;
     EditText editEmail;
     Spinner editCountry;
+    Button btnEdit;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,8 +42,10 @@ public class EditFragment extends Fragment {
         editUser = view.findViewById(R.id.editUser);
         editEmail = view.findViewById(R.id.editEmail);
         editCountry = view.findViewById(R.id.editCountry);
+        btnEdit = view.findViewById(R.id.btnProfile);
         loadUser();
         return view;
+
     }
 
     private void loadUser() {
@@ -61,6 +65,8 @@ public class EditFragment extends Fragment {
                     editEmail.setText(response.body().getEmail());
                     List<String> countrylist = new ArrayList<String>(Arrays.asList(getResources().getStringArray(R.array.country_arrays)));
                     editCountry.setSelection(countrylist.indexOf(response.body().getCountry()));
+
+
 
                 }
             }

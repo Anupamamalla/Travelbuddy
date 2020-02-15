@@ -25,19 +25,20 @@
 //public class RegistrationTest {
 //
 //    @Rule
-//    public ActivityTestRule<login> testRule = new ActivityTestRule<>(login.class);
+//    public ActivityTestRule<Registration> testRule = new ActivityTestRule<>(login.class);
 //
 //    Registration registration = null;
 //
 //    @Before
 //    public void setUp() throws Exception {
-//        registration = testRule.getActivity();
+//        Registration= testRule.getActivity();
 //    }
 //
 //    @Test
 //    public void ComponentsTest() {
-//        assertNotNull(login.etusername);
-//        assertNotNull(login.etpassword);
+//        assertNotNull(registration.etUserreg);
+//        assertNotNull(registration.et);
+//        assertNotNull(registration.et)
 //
 //    }
 //
@@ -51,10 +52,10 @@
 //
 //        closeSoftKeyboard();
 //
-//        onView(withId(R.id.login))
+//        onView(withId(R.id.registration))
 //                .perform(click());
 //
-//        onView(withText("Login success")).
+//        onView(withText("Registered")).
 //                inRoot(withDecorView(Matchers.not(is(login.getWindow().getDecorView())))).
 //                check(matches(isDisplayed()));
 //    }

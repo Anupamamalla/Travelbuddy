@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class login extends AppCompatActivity {
 
-    private EditText etusername, etpassword;
+    protected EditText etusername, etpassword;
     private Button btnlogin;
     boolean flag = false;
     private SensorManager sensorManager;
@@ -75,7 +75,7 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
                         if(!response.isSuccessful()){
-                            Toast.makeText(login.this,"Error",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this,"Login Sucess",Toast.LENGTH_SHORT).show();
                         } else{
                             Url.token = "Bearer " + response.body().getToken();
                             Toast.makeText(login.this,"token:"+response.body().getToken(),Toast.LENGTH_SHORT).show();

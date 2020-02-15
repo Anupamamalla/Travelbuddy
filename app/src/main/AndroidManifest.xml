@@ -17,7 +17,6 @@
         <activity android:name=".Activity.Admin"></activity>
         <activity android:name=".Activity.ViewPackage" />
         <activity android:name=".Activity.Dashboard" />
-        <activity android:name=".Activity.Edit" />
         <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

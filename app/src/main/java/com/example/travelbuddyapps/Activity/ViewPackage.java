@@ -8,6 +8,7 @@ import com.example.travelbuddyapps.R;
 
 public class ViewPackage extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

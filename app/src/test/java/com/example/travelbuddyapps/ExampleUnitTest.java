@@ -26,5 +26,5 @@ public class ExampleUnitTest {
         RegistrationBLL RegistrationBLL = new RegistrationBLL();
         boolean result = RegistrationBLL.signup("anupama@gmail.com", "Nepal", "Anupama", "123456");
         assertEquals(true, result);
-//    }
+  }
 }
